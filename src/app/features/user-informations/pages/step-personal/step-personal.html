@@ -27,12 +27,12 @@
     <div>
       <label class="block text-sm font-medium text-zinc-300 mb-2" for="state">Estado</label>
       <div class="relative">
-        <select formControlName="state"
+        <select formControlName="state" appInputValidation errorMessage="O campo Estado é obrigatório"
           class="w-full appearance-none bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-200 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors cursor-pointer">
           <option disabled selected>Selecione</option>
-          <option value="São Paulo">São Paulo</option>
-          <option value="Rio de Janeiro">Rio de Janeiro</option>
-          <option value="Minas Gerais">Minas Gerais</option>
+          @for (state of statesList(); track state.name) {
+          <option [value]="state.name">{{ state.name }}</option>
+          }
         </select>
         <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
