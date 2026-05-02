@@ -25,15 +25,12 @@ export class InputValidationDirective {
   @Input() errorMessage = 'Campo inválido';
 
   ngOnInit() {
-    console.log('OnInit errorMessage:', this.errorMessage);
-
     this._ngControl.statusChanges?.pipe(takeUntilDestroyed(this._destroyRef)).subscribe(() => {
       this.updateStatus();
     });
   }
 
   @HostListener('blur') onBlur() {
-    console.log('onBlur errorMessage:', this.errorMessage);
     this.updateStatus();
   }
 
