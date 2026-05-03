@@ -32,14 +32,14 @@
           <label class="text-xs text-zinc-500 mb-1 block uppercase" for="position-{{$index}}">Cargo</label>
           <input type="text" id="position-{{$index}}" placeholder="Ex: Engenheiro de Software"
             class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2 text-zinc-200 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors font-medium"
-            formControlName="position" />
+            formControlName="position" appInputValidation errorMessage="O campo Cargo é obrigatório" />
         </div>
 
         <div class="col-span-1 md:col-span-2">
           <label class="text-xs text-zinc-500 mb-1 block uppercase" for="company-{{$index}}">Empresa</label>
           <input type="text" id="company-{{$index}}" placeholder="Ex: Rocketseat"
             class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2 text-zinc-200 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors font-medium"
-            formControlName="company" />
+            formControlName="company" appInputValidation errorMessage="O campo Empresa é obrigatório" />
         </div>
 
         <div class="col-span-1 md:col-span-2">
@@ -47,7 +47,7 @@
             atividades</label>
           <textarea id="description-{{$index}}" rows="3" placeholder="Conte um pouco sobre suas responsabilidades..."
             class="w-full bg-zinc-900 border border-zinc-800 rounded-lg px-4 py-2 text-zinc-200 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors resize-none"
-            formControlName="description"></textarea>
+            formControlName="description" appInputValidation errorMessage="O campo Descrição é obrigatório"></textarea>
         </div>
       </div>
     </div>
