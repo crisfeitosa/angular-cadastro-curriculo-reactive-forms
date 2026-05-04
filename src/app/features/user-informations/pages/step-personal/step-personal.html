@@ -29,8 +29,11 @@
 
     <div class="col-span-1 md:col-span-2">
       <label class="block text-sm font-medium text-zinc-300 mb-2" for="address">Endereço</label>
-      <input type="text" placeholder="Rua, Número, Bairro" formControlName="address" appInputValidation
-        errorMessage="O campo Endereço é obrigatório"
+      <input type="text" placeholder="Rua, Número, Bairro" formControlName="address" appInputValidation [errorMessage]="
+          _curriculumFormStore.personalFormGroup.get('address')?.hasError('pattern')
+            ? 'O endereço deve seguir o padrão: Rua, Número, Bairro'
+            : 'O campo Endereço é obrigatório'
+        "
         class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" />
     </div>
 
