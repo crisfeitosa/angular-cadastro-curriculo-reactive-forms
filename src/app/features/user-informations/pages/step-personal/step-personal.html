@@ -9,8 +9,11 @@
 
     <div>
       <label class="block text-sm font-medium text-zinc-300 mb-2" for="email">E-mail</label>
-      <input type="email" placeholder="dev@rocketseat.com" formControlName="email" appInputValidation
-        errorMessage="O campo Email é obrigatório"
+      <input type="email" placeholder="dev@rocketseat.com" formControlName="email" appInputValidation [errorMessage]="
+          _curriculumFormStore.personalFormGroup.get('email')?.hasError('email')
+            ? 'O campo E-mail não está preenchido corretamente'
+            : 'O campo E-mail é obrigatório'
+        "
         class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-4 py-3 text-zinc-200 placeholder-zinc-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors" />
     </div>
 
